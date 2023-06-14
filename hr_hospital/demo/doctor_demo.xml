@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <data>
+          <record id="hr_hospital_doctor_0" model="hr_hospital.doctor">
+            <field name="name"><![CDATA[Ткачук Віктор Іванович]]></field>
+            <field name="description"><![CDATA[Лікар невролог]]></field>
+          </record>
+
+          <record id="hr_hospital_doctor_1" model="hr_hospital.doctor">
+            <field name="name"><![CDATA[Дейнека Лариса Василівна]]></field>
+            <field name="description"><![CDATA[Лікар терапевт]]></field>
+          </record>
+
+          <record id="hr_hospital_doctor_2" model="hr_hospital.doctor">
+            <field name="name"><![CDATA[Нагорна Олександра Степанівна]]></field>
+            <field name="description"><![CDATA[Лікар хірург]]></field>
+          </record>
+    </data>
+</odoo>

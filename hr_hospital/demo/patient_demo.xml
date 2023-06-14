@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo  noupdate="1"> 
+    <data>
+          <record id="hr_hospital_patient_0" model="hr_hospital.patient">
+            <field name="name"><![CDATA[Марчук Зоя Степанівна]]></field>
+            <field name="description"></field>
+          </record>
+
+          <record id="hr_hospital_patient_1" model="hr_hospital.patient">
+            <field name="name"><![CDATA[Степанюк Іван Васильович]]></field>
+            <field name="description"></field>
+          </record>
+
+          <record id="hr_hospital_patient_2" model="hr_hospital.patient">
+            <field name="name"><![CDATA[Кузьмук Олег Ігорович]]></field>
+            <field name="description"></field>
+          </record>
+    </data>
+</odoo>
