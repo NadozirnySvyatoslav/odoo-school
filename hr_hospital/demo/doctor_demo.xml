@@ -2,18 +2,30 @@
 <odoo noupdate="1">
     <data>
           <record id="hr_hospital_doctor_0" model="hr_hospital.doctor">
-            <field name="name"><![CDATA[Ткачук Віктор Іванович]]></field>
-            <field name="description"><![CDATA[Лікар невролог]]></field>
+            <field name="surname">Ткачук</field>
+            <field name="first_name">Віктор</field>
+            <field name="speciality">Лікар невролог</field>
+            <field name="email">tkachuk.viktor@gmail.com</field>
+            <field name="sex">male</field>
+            <field name="photo" file="hr_hospital/static/photos/tkachuk.png"  type="base64"/>
           </record>
 
           <record id="hr_hospital_doctor_1" model="hr_hospital.doctor">
-            <field name="name"><![CDATA[Дейнека Лариса Василівна]]></field>
-            <field name="description"><![CDATA[Лікар терапевт]]></field>
+            <field name="surname">Дейнека</field>
+            <field name="first_name">Лариса</field>
+            <field name="email">deineka.l@gmail.com</field>
+            <field name="sex">female</field>
+            <field name="speciality">Лікар терапевт</field>
+            <field name="photo" file="hr_hospital/static/photos/deineka.jpg"  type="base64"/>
           </record>
 
           <record id="hr_hospital_doctor_2" model="hr_hospital.doctor">
-            <field name="name"><![CDATA[Нагорна Олександра Степанівна]]></field>
-            <field name="description"><![CDATA[Лікар хірург]]></field>
+            <field name="surname">Нагорна</field>
+            <field name="first_name">Олександра</field>
+            <field name="email">nahorna.o@gmail.com</field>
+            <field name="sex">female</field>
+            <field name="speciality">Лікар хірург</field>
+            <field name="photo" file="hr_hospital/static/photos/nahorna.jpg"  type="base64"/>
           </record>
     </data>
 </odoo>

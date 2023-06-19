@@ -2,18 +2,30 @@
 <odoo  noupdate="1"> 
     <data>
           <record id="hr_hospital_patient_0" model="hr_hospital.patient">
-            <field name="name"><![CDATA[Марчук Зоя Степанівна]]></field>
+            <field name="surname">Марчук</field>
+            <field name="first_name">Зоя Степанівна</field>
+            <field name="birthday">1963-02-18</field>
+            <field name="sex">female</field>
             <field name="description"></field>
+            <field name="photo" file="hr_hospital/static/photos/marchuk.jpg" type="base64" />
           </record>
 
           <record id="hr_hospital_patient_1" model="hr_hospital.patient">
-            <field name="name"><![CDATA[Степанюк Іван Васильович]]></field>
+            <field name="surname">Степанюк</field>
+            <field name="first_name">Іван Васильович</field>
+            <field name="birthday">1958-07-28</field>
+            <field name="sex">male</field>
             <field name="description"></field>
+            <field name="photo" file="hr_hospital/static/photos/stepanuk.jpg" type="base64" />
           </record>
 
           <record id="hr_hospital_patient_2" model="hr_hospital.patient">
-            <field name="name"><![CDATA[Кузьмук Олег Ігорович]]></field>
+            <field name="surname">Кузьмук</field>
+            <field name="first_name">Олег Ігорович</field>
+            <field name="birthday">1976-01-14</field>
+            <field name="sex">male</field>
             <field name="description"></field>
+            <field name="photo" file="hr_hospital/static/photos/kuzmuk.jpg" type="base64" />
           </record>
     </data>
 </odoo>

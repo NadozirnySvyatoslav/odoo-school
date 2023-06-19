@@ -1,6 +1,6 @@
 {
     'name': "HR Hospital",
-    'version': '1.0.0.0.1',
+    'version': '16.0.1.0.0',
     'category': 'Human Resources/Employees',
 
     'summary': """
@@ -15,8 +15,16 @@
         'security/ir.model.access.csv',
         'views/hospital_doctor_views.xml',
         'views/hospital_patient_views.xml',
+        'views/hospital_contact_person_views.xml',
+        'views/hospital_disease_views.xml',
+        'views/hospital_diagnose_views.xml',
+        'views/hospital_visit_views.xml',
         'views/hospital_menus.xml',
         'data/disease_data.xml',
+        'data/visits_sequence.xml',
+        'wizard/choose_diagnose_views.xml',
+        'wizard/select_doctor_views.xml',
+        'report/doctor_visit_report.xml',
     ],
     'demo': [
         'demo/doctor_demo.xml',

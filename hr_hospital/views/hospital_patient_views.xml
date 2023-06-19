@@ -9,8 +9,34 @@
         <form string="Patient">
           <sheet>
             <group>
-              <field name="name"/>
-              <field name="description"/>
+              <group>
+                <field name="surname"/>
+                <field name="first_name"/>
+                <field name="sex"/>
+                <field name="birthday"/>
+                <field name="age"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="passport_no"/>
+                <field name="doctor_id"/>
+                <field name="contact_id"/>
+              </group>
+              <group>
+                <field name="photo" widget="image"/>
+              </group>
+              <notebook>
+                <page string="Notes">
+                  <field name="description"/>
+                </page>
+                <page string="History of doctors changes">
+                  <field name="doctor_change_history_ids">
+                    <tree>
+                        <field name="date" readonly='1'/>
+                        <field name="doctor_id" readonly='1'/>
+                    </tree>
+                </field>
+                </page>
+              </notebook>
             </group>
           </sheet>
         </form>
@@ -23,6 +49,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="sex"/>
+          <field name="age"/>
+          <field name="birthday"/>
+          <field name="doctor_id"/>
+          <field name="phone"/>
         </tree>
       </field>
     </record>
