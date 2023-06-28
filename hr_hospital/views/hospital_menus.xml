@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
     <!-- Top menu item -->
     <menuitem name="Hospital" id="hospital_menu_root"/>
     <!-- menu categories -->
@@ -25,5 +24,4 @@
 
     <menuitem name="Diseases" id="hospital_diseases" parent="hospital_settings_menu"
               action="hospital_disease_action"/>
-  </data>
 </odoo>

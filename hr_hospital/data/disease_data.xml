@@ -1,86 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
+    <record id="disease_infects" model="hr_hospital.disease">
+        <field name="name">Інфекційні захворювання</field>
+        <field name="description">розлади здоров'я людей, тварин, рослин у вигляді хвороби, які спричинюють збудники —
+            віруси, різноманітні бактерії, найпростіші, паразитичні гриби, гельмінти, продукти їхньої життєдіяльності
+            (екзотоксини, ендотоксини), патогенні білки — пріони, здатні передаватися від заражених організмів здоровим
+            і схильні до масового поширення.
+        </field>
+    </record>
 
-          <record id="disease_infects" model="hr_hospital.disease">
-            <field name="name">Інфекційні захворювання</field>
-            <field name="description">розлади здоров'я людей, тварин, рослин у вигляді хвороби, які спричинюють збудники — віруси, різноманітні бактерії, найпростіші, паразитичні гриби, гельмінти, продукти їхньої життєдіяльності (екзотоксини, ендотоксини), патогенні білки — пріони, здатні передаватися від заражених організмів здоровим і схильні до масового поширення.</field>
-          </record>
+    <record id="disease_infects_bacteria" model="hr_hospital.disease">
+        <field name="name">Бактеріальні захворювання</field>
+        <field name="description">Захворювання, спричинені діяльністю мікроорганізмів (бактерій), які складаються з
+            однієї клітини, котра має міцну стінку. Вони належать до інфекційних хвороб, які є розладами життєдіяльності
+            людей і тварин, які спричинюються живими збудниками (вірусами, бактеріями, рикетсіями), продуктами їхньої
+            життєдіяльності (токсинами), патогенними білками (пріонами), передаються від заражених осіб здоровим і
+            можуть масово поширюватися.
+        </field>
+        <field name="parent_id" ref="disease_infects"/>
+    </record>
 
+    <record id="disease_infects_virus" model="hr_hospital.disease">
+        <field name="name">Вірусні захворювання</field>
+        <field name="description">Хвороби рослин, тварин та людини, які виникають внаслідок проникнення в їхні клітини і
+            розвитку там різних вірусів, які являють собою дрібні форми життя, що містять молекулу нуклеїнової кислоти,
+            носія генетичної інформації, оточену захисною оболонкою з білків.
+        </field>
+        <field name="parent_id" ref="disease_infects"/>
+    </record>
 
-          <record id="disease_infects_bacteria" model="hr_hospital.disease">
-            <field name="name">Бактеріальні захворювання</field>
-            <field name="description">Захворювання, спричинені діяльністю мікроорганізмів (бактерій), які складаються з однієї клітини, котра має міцну стінку. Вони належать до інфекційних хвороб, які є розладами життєдіяльності людей і тварин, які спричинюються живими збудниками (вірусами, бактеріями, рикетсіями), продуктами їхньої життєдіяльності (токсинами), патогенними білками (пріонами), передаються від заражених осіб здоровим і можуть масово поширюватися.</field>
-            <field name="parent_id" ref="disease_infects"/>
-          </record>
+    <record id="disease_infects_micos" model="hr_hospital.disease">
+        <field name="name">Грибкові захворювання</field>
+        <field name="description">Захворювання людини, що спричинені патологічними для неї грибами. Друга половина XX
+            століття характеризувалася помітним зростанням захворюваності на мікози.
+        </field>
+        <field name="parent_id" ref="disease_infects"/>
+    </record>
 
-          <record id="disease_infects_virus" model="hr_hospital.disease">
-            <field name="name">Вірусні захворювання</field>
-            <field name="description">Хвороби рослин, тварин та людини, які виникають внаслідок проникнення в їхні клітини і розвитку там різних вірусів, які являють собою дрібні форми життя, що містять молекулу нуклеїнової кислоти, носія генетичної інформації, оточену захисною оболонкою з білків.</field>
-            <field name="parent_id" ref="disease_infects"/>
-          </record>
+    <record id="disease_infects_prostatit" model="hr_hospital.disease">
+        <field name="name">Гострий простатит</field>
+        <field name="description">гостре запальне захворювання передміхурової залози, викликане бактеріальним
+            інфікуванням її тканини. Характерною ознакою гострого простатиту є збільшення об'єму простати, що в свою
+            чергу викликає перетискання сечовипускного каналу та спричинює гостру затримку сечі на відміну від
+            хронічного простатиту або аденоми простати, коли затримка сечі наростає поступово. Цей стан вимагає
+            невідкладної медичної допомоги.
+        </field>
+        <field name="parent_id" ref="disease_infects_bacteria"/>
+    </record>
 
-          <record id="disease_infects_micos" model="hr_hospital.disease">
-            <field name="name">Грибкові захворювання</field>
-            <field name="description">Захворювання людини, що спричинені патологічними для неї грибами. Друга половина XX століття характеризувалася помітним зростанням захворюваності на мікози.</field>
-            <field name="parent_id" ref="disease_infects" />
-          </record>
+    <record id="disease_infects_faringit" model="hr_hospital.disease">
+        <field name="name">Стрептококовий фарингіт (ангіна)</field>
+        <field name="description">(ангіна) — хвороба, яку спричинюють β-гемолітичні стрептококи групи А[4],
+            характеризується ураженнями лімфоїдних елементів ротоглотки та мигдаликів (залоз, розташованих у
+            ротоглотці). Основними клінічними проявами є гарячка, біль у горлі, збільшення мигдаликів, шийних
+            лімфатичних вузлів. Стрептококовий фарингіт становить до 37 % захворювань горла у дітей.
+        </field>
+        <field name="parent_id" ref="disease_infects_bacteria"/>
+    </record>
 
-          <record id="disease_infects_prostatit" model="hr_hospital.disease">
-            <field name="name">Гострий простатит</field>
-            <field name="description">гостре запальне захворювання передміхурової залози, викликане бактеріальним інфікуванням її тканини. Характерною ознакою гострого простатиту є збільшення об'єму простати, що в свою чергу викликає перетискання сечовипускного каналу та спричинює гостру затримку сечі на відміну від хронічного простатиту або аденоми простати, коли затримка сечі наростає поступово. Цей стан вимагає невідкладної медичної допомоги.</field>
-            <field name="parent_id" ref="disease_infects_bacteria" />
-          </record>
-
-          <record id="disease_infects_faringit" model="hr_hospital.disease">
-            <field name="name">Стрептококовий фарингіт (ангіна)</field>
-            <field name="description">(ангіна) — хвороба, яку спричинюють β-гемолітичні стрептококи групи А[4], характеризується ураженнями лімфоїдних елементів ротоглотки та мигдаликів (залоз, розташованих у ротоглотці). Основними клінічними проявами є гарячка, біль у горлі, збільшення мигдаликів, шийних лімфатичних вузлів. Стрептококовий фарингіт становить до 37 % захворювань горла у дітей.</field>
-            <field name="parent_id" ref="disease_infects_bacteria" />
-          </record>
-
-          <record id="disease_infects_lepros" model="hr_hospital.disease">
-            <field name="name">Проказа</field>
-            <field name="description"> антропонозна інфекційна хвороба з контактною передачею і хронічним перебігом, яку спричинюють мікобактерії лепри. Перебігає з переважним ураженням шкіри, периферійної нервової системи, іноді переднього відрізку ока, верхніх дихальних шляхів вище гортані, яєчок, а також кисті та стопи. Належить до групи забутих тропічних хвороб.</field>
-            <field name="parent_id" ref="disease_infects_bacteria"/>
-          </record>
-
-
-          <record id="disease_infects_grip" model="hr_hospital.disease">
-            <field name="name">Грип</field>
-            <field name="description">гостра вірусна інфекційна хвороба з періодичним епідемічним чи навіть пандемічним поширенням. Хвороба характеризується появою гострого респіраторного синдрому з переважанням трахеобронхіту та вираженою інтоксикацією з гарячкою.</field>
-            <field name="parent_id" ref="disease_infects_virus" />
-          </record>
-
-          <record id="disease_infects_rubeola" model="hr_hospital.disease">
-            <field name="name">Кір</field>
-            <field name="description">антропонозна інфекційна хвороба, яку спричинює вірус з роду Morbillivirus. Характеризується вираженою автоінтоксикацією, гарячкою, запальними явищами з боку дихальних шляхів, кон'юнктивітом, появою своєрідних плям на слизовій оболонці ротової порожнини (плями Копліка) і папульозно-плямистим висипом на шкірі. Це одне з найзаразніших вірусних захворювань, його індекс контагіозності наближався до 100 % у довакцинальний період, найсприятливішими до кору були діти, тому кір відносять до так званих дитячих інфекційних хвороб.</field>
-            <field name="parent_id" ref="disease_infects_virus"/>
-          </record>
-
-          <record id="disease_infects_rotavirus" model="hr_hospital.disease">
-            <field name="name">Ротавірусна інфекція</field>
-            <field name="description">інфекційна хвороба вірусного походження, яка перебігає з тяжкою діареєю. Є найчастішою причиною тяжкої діареї, нерідко смертельної, у немовлят і маленьких дітей.</field>
-            <field name="parent_id" ref="disease_infects_virus" />
-          </record>
-
-          <record id="disease_infects_candidos" model="hr_hospital.disease">
-            <field name="name">Кандидоз</field>
-            <field name="description">грибкова інфекція, яку спричинюють представники роду Candida. Найпоширеніша людська патогенна грибкова інфекція. </field>
-            <field name="parent_id" ref="disease_infects_micos" />
-          </record>
-
-          <record id="disease_infects_aspergilos" model="hr_hospital.disease">
-            <field name="name">Аспергільоз</field>
-            <field name="description">захворювання органів дихання тварин і людей, яке спричинює пліснявий гриб Aspergillus niger з роду аспергіл. Його відносять у людей до опортуністичних інфекцій. </field>
-            <field name="parent_id" ref="disease_infects_micos" />
-          </record>
-
-          <record id="disease_infects_capitis" model="hr_hospital.disease">
-            <field name="name">Стригучий лишай</field>
-            <field name="description">тяжке шкірне інфекційне захворювання, різновид дерматофітозу, яке спричинюють паразитні гриби родів Trichophyton, Microsporum і Epidermophyton. </field>
-            <field name="parent_id" ref="disease_infects_micos" />
-          </record>
+    <record id="disease_infects_lepros" model="hr_hospital.disease">
+        <field name="name">Проказа</field>
+        <field name="description">антропонозна інфекційна хвороба з контактною передачею і хронічним перебігом, яку
+            спричинюють мікобактерії лепри. Перебігає з переважним ураженням шкіри, периферійної нервової системи, іноді
+            переднього відрізку ока, верхніх дихальних шляхів вище гортані, яєчок, а також кисті та стопи. Належить до
+            групи забутих тропічних хвороб.
+        </field>
+        <field name="parent_id" ref="disease_infects_bacteria"/>
+    </record>
 
 
-    </data>
+    <record id="disease_infects_grip" model="hr_hospital.disease">
+        <field name="name">Грип</field>
+        <field name="description">гостра вірусна інфекційна хвороба з періодичним епідемічним чи навіть пандемічним
+            поширенням. Хвороба характеризується появою гострого респіраторного синдрому з переважанням трахеобронхіту
+            та вираженою інтоксикацією з гарячкою.
+        </field>
+        <field name="parent_id" ref="disease_infects_virus"/>
+    </record>
+
+    <record id="disease_infects_rubeola" model="hr_hospital.disease">
+        <field name="name">Кір</field>
+        <field name="description">антропонозна інфекційна хвороба, яку спричинює вірус з роду Morbillivirus.
+            Характеризується вираженою автоінтоксикацією, гарячкою, запальними явищами з боку дихальних шляхів,
+            кон'юнктивітом, появою своєрідних плям на слизовій оболонці ротової порожнини (плями Копліка) і
+            папульозно-плямистим висипом на шкірі. Це одне з найзаразніших вірусних захворювань, його індекс
+            контагіозності наближався до 100 % у довакцинальний період, найсприятливішими до кору були діти, тому кір
+            відносять до так званих дитячих інфекційних хвороб.
+        </field>
+        <field name="parent_id" ref="disease_infects_virus"/>
+    </record>
+
+    <record id="disease_infects_rotavirus" model="hr_hospital.disease">
+        <field name="name">Ротавірусна інфекція</field>
+        <field name="description">інфекційна хвороба вірусного походження, яка перебігає з тяжкою діареєю. Є найчастішою
+            причиною тяжкої діареї, нерідко смертельної, у немовлят і маленьких дітей.
+        </field>
+        <field name="parent_id" ref="disease_infects_virus"/>
+    </record>
+
+    <record id="disease_infects_candidos" model="hr_hospital.disease">
+        <field name="name">Кандидоз</field>
+        <field name="description">грибкова інфекція, яку спричинюють представники роду Candida. Найпоширеніша людська
+            патогенна грибкова інфекція.
+        </field>
+        <field name="parent_id" ref="disease_infects_micos"/>
+    </record>
+
+    <record id="disease_infects_aspergilos" model="hr_hospital.disease">
+        <field name="name">Аспергільоз</field>
+        <field name="description">захворювання органів дихання тварин і людей, яке спричинює пліснявий гриб Aspergillus
+            niger з роду аспергіл. Його відносять у людей до опортуністичних інфекцій.
+        </field>
+        <field name="parent_id" ref="disease_infects_micos"/>
+    </record>
+
+    <record id="disease_infects_capitis" model="hr_hospital.disease">
+        <field name="name">Стригучий лишай</field>
+        <field name="description">тяжке шкірне інфекційне захворювання, різновид дерматофітозу, яке спричинюють
+            паразитні гриби родів Trichophyton, Microsporum і Epidermophyton.
+        </field>
+        <field name="parent_id" ref="disease_infects_micos"/>
+    </record>
 </odoo>

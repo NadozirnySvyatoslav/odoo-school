@@ -1,72 +1,71 @@
-from datetime import datetime,timedelta
+from datetime import timedelta
 from odoo import models, fields, api, _
-from odoo.exceptions import UserError
+from odoo.exceptions import ValidationError, UserError
+
 
 class HRHospitalVisit(models.Model):
     _name = 'hr_hospital.visit'
     _description = 'Visit model'
-    name = fields.Char(readonly=True,default=lambda self:_('New'))
+
+    name = fields.Char(readonly=True, default=lambda self: _('New'))
     doctor_id = fields.Many2one(
+        readonly=False,
         comodel_name='hr_hospital.doctor',
-        readonly=True,
-        states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
+        # states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
         required=True,
     )
     patient_id = fields.Many2one(
+        readonly=False,
         comodel_name='hr_hospital.patient',
-        states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
+        # states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
         required=True,
     )
     diagnose_id = fields.Many2one(
+        readonly=True,
         comodel_name='hr_hospital.diagnose',
         copy=False,
-        readonly=True,
     )
     description = fields.Text("Notes")
     planned_date = fields.Datetime(
-        readonly=True,
-        states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
+        readonly=False,
+        # states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
         copy=False,
     )
     state = fields.Selection(
+        string="Status",
         required=True,
         default='draft',
         selection=[
-          ('draft', 'Draft'),
-          ('wait', 'Waiting'),
-          ('need_confirm', 'Need confirmation'),
-          ('done', 'Done'),
-          ('canceled', 'Canceled'),
+            ('draft', 'Draft'),
+            ('wait', 'Waiting'),
+            ('need_confirm', 'Need confirmation'),
+            ('done', 'Done'),
+            ('canceled', 'Canceled'),
         ],
     )
 
-    def _check_planned_date(self,date):
-        """Check if planned date more than 15 minutes from existed record"""
-        planned_date=datetime.strptime(date,"%Y-%m-%d %H:%M:%S")
-        min_date = planned_date - timedelta( minutes=15)
-        max_date = planned_date + timedelta( minutes=15)
-        records=self.env["hr_hospital.visit"].search(['&','&',('planned_date','>',min_date,),('planned_date','<',max_date),('id','!=',self.id)])
-        if records:
-            raise UserError(_("Date and time already taken"))
+    @api.constrains("planned_date")
+    def _constrains_planned_date(self):
+        for record in self:
+            """Check if planned date more than 15 minutes from existed record"""
+            min_date = record.planned_date - timedelta(minutes=15)
+            max_date = record.planned_date + timedelta(minutes=15)
+            records = self.env["hr_hospital.visit"].search(
+                ['&', '&', ('planned_date', '>', min_date,), ('planned_date', '<', max_date), ('id', '!=', record.id)])
+            if records:
+                raise ValidationError(_("Date and time already taken"))
 
     @api.model
     def create(self, vals):
         if vals.get('name', _('New')) == _('New'):
-            vals['name']=self.env['ir.sequence'].next_by_code('hospital_visits')
-        if vals.get('planned_date'):
-            self._check_planned_date(vals.get('planned_date'))
-        res=super(HRHospitalVisit, self).create(vals)
-        return res
+            vals['name'] = self.env['ir.sequence'].next_by_code('hospital_visits')
+        return super(HRHospitalVisit, self).create(vals)
 
     def write(self, vals):
-        if vals.get('planned_date'):
-            self._check_planned_date(vals.get('planned_date'))
-        if self.state in ('need_confirm','done') and not self.diagnose_id:
-            raise UserError(_("Cannot close record  without diagnose"))
-
-        res=super(HRHospitalVisit, self).write(vals)
-        return res
-
+        for obj in self:
+            if obj.state in ['need_confirm', 'done'] and not obj.diagnose_id:
+                raise UserError(_("Cannot close record  without diagnose"))
+        return super(HRHospitalVisit, self).write(vals)
 
     def action_cancel(self):
         return self.write({'state': 'canceled'})
@@ -84,10 +83,9 @@ class HRHospitalVisit(models.Model):
         return self.write({'state': 'wait'})
 
     def unlink(self):
-        if self.state in ('canceled','done') and self.diagnose_id:
+        if self.state in ('canceled', 'done') and self.diagnose_id:
             raise UserError(_("Cannot delete closed record"))
         return super().unlink()
-
 
     def set_diagnose(self):
         view_id = self.env.ref('hr_hospital.choose_diagnose_view_form').id
@@ -106,7 +104,6 @@ class HRHospitalVisit(models.Model):
                 'default_visit_id': self.id,
             }
         }
-
 
     def select_doctor_wizard(self):
         view_id = self.env.ref('hr_hospital.select_doctor_view_form').id

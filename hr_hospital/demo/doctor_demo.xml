@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
-    <data>
-          <record id="hr_hospital_doctor_0" model="hr_hospital.doctor">
-            <field name="surname">Ткачук</field>
-            <field name="first_name">Віктор</field>
-            <field name="speciality">Лікар невролог</field>
-            <field name="email">tkachuk.viktor@gmail.com</field>
-            <field name="sex">male</field>
-            <field name="photo" file="hr_hospital/static/photos/tkachuk.png"  type="base64"/>
-          </record>
 
-          <record id="hr_hospital_doctor_1" model="hr_hospital.doctor">
-            <field name="surname">Дейнека</field>
-            <field name="first_name">Лариса</field>
-            <field name="email">deineka.l@gmail.com</field>
-            <field name="sex">female</field>
-            <field name="speciality">Лікар терапевт</field>
-            <field name="photo" file="hr_hospital/static/photos/deineka.jpg"  type="base64"/>
-          </record>
+    <record id="hr_hospital_doctor_0" model="hr_hospital.doctor">
+        <field name="surname">Ткачук</field>
+        <field name="first_name">Віктор</field>
+        <field name="speciality">Лікар невролог</field>
+        <field name="email">tkachuk.viktor@gmail.com</field>
+        <field name="sex">male</field>
+        <field name="photo" file="hr_hospital/static/photos/tkachuk.png" type="base64"/>
+    </record>
 
-          <record id="hr_hospital_doctor_2" model="hr_hospital.doctor">
-            <field name="surname">Нагорна</field>
-            <field name="first_name">Олександра</field>
-            <field name="email">nahorna.o@gmail.com</field>
-            <field name="sex">female</field>
-            <field name="speciality">Лікар хірург</field>
-            <field name="photo" file="hr_hospital/static/photos/nahorna.jpg"  type="base64"/>
-          </record>
-    </data>
+    <record id="hr_hospital_doctor_1" model="hr_hospital.doctor">
+        <field name="surname">Дейнека</field>
+        <field name="first_name">Лариса</field>
+        <field name="email">deineka.l@gmail.com</field>
+        <field name="sex">female</field>
+        <field name="speciality">Лікар терапевт</field>
+        <field name="photo" file="hr_hospital/static/photos/deineka.jpg" type="base64"/>
+    </record>
+
+    <record id="hr_hospital_doctor_2" model="hr_hospital.doctor">
+        <field name="surname">Нагорна</field>
+        <field name="first_name">Олександра</field>
+        <field name="email">nahorna.o@gmail.com</field>
+        <field name="sex">female</field>
+        <field name="speciality">Лікар хірург</field>
+        <field name="photo" file="hr_hospital/static/photos/nahorna.jpg" type="base64"/>
+    </record>
+
 </odoo>

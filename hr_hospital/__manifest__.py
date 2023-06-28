@@ -10,7 +10,7 @@
     'author': "Svyatoslav Nadozirny",
     'website': "https://www.yourcompany.com",
     'maintainer': 'NDev',
-    'depends': ['base'],
+    'depends': ['portal', 'mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/hospital_doctor_views.xml',

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo  noupdate="1"> 
-    <data>
           <record id="hr_hospital_patient_0" model="hr_hospital.patient">
             <field name="surname">Марчук</field>
             <field name="first_name">Зоя Степанівна</field>
@@ -27,5 +26,4 @@
             <field name="description"></field>
             <field name="photo" file="hr_hospital/static/photos/kuzmuk.jpg" type="base64" />
           </record>
-    </data>
 </odoo>
