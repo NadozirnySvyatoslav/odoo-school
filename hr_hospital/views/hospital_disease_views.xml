@@ -23,8 +23,22 @@
         <field name="model">hr_hospital.disease</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="parent_id"/>
                 <field name="name"/>
             </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_disease_filter">
+        <field name="name">Diseases</field>
+        <field name="model">hr_hospital.disease</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="parent_id"/>
+                <searchpanel view_types="tree">
+                    <field name="parent_id" groupby="parent_id"/>
+                </searchpanel>
+            </search>
         </field>
     </record>
 
@@ -32,5 +46,6 @@
         <field name="name">Diseases</field>
         <field name="res_model">hr_hospital.disease</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_disease_filter"/>
     </record>
 </odoo>
