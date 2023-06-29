@@ -8,4 +8,7 @@ access_hr_hospital_diagnose,hr_hospital.diagnose,model_hr_hospital_diagnose,base
 access_hr_hospital_doctor_change_history,hr_hospital.doctor_change_history,model_hr_hospital_doctor_change_history,base.group_user,1,1,1,1
 access_hr_hospital_choose_diagnose,hr_hospital.choose_diagnose,model_hr_hospital_choose_diagnose,base.group_user,1,1,1,1
 access_hr_hospital_select_doctor,hr_hospital.select_doctor,model_hr_hospital_select_doctor,base.group_user,1,1,1,1
+access_hr_hospital_analysis,hr_hospital.analysis,model_hr_hospital_analysis,base.group_user,1,1,1,1
+access_hr_hospital_analysis_value,hr_hospital.analysis.value,model_hr_hospital_analysis_value,base.group_user,1,1,1,1
+access_hr_hospital_doctor_visit,hr_hospital.doctor.visit,model_hr_hospital_doctor_visit,base.group_user,1,1,1,1
 

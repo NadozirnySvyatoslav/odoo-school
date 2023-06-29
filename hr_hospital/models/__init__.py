@@ -6,3 +6,4 @@ from . import patient
 from . import disease
 from . import doctor_change_history
 from . import visit
+from . import analysis

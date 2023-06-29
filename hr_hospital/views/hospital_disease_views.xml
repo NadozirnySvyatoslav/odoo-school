@@ -35,7 +35,7 @@
             <search string="Categories">
                 <filter name="groupby_name" string="Parent" context="{'group_by':'parent_id'}"/>
                 <field name="parent_id" groupby="patient_id"/>
-                <searchpanel view_types="tree">
+                <searchpanel view_types="list">
                     <field name="parent_id" groupby="parent_id" hierarchize="1" enable_counters="1"/>
                 </searchpanel>
             </search>

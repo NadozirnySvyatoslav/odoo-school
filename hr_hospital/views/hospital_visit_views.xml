@@ -36,6 +36,27 @@
                         <group>
                         </group>
                         <notebook>
+                            <page string="Analyses">
+                                <field name="analyses_ids"
+                                       context="{'default_doctor_id':doctor_id,'default_patient_id':patient_id}">
+                                    <kanban class="o_kanban_mobile">
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <div>
+                                                            <field name="name"/>
+                                                        </div>
+                                                        <div>
+                                                            <field name="date"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
                             <page string="Notes">
                                 <field name="description"/>
                             </page>

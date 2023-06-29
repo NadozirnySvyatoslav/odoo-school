@@ -5,13 +5,19 @@ Changelog
 `16.0.1.0.2`
 ----------------
 
-- Fix types, added recordsets in write methods, added constraints
+- Fix types, added record sets in write methods, added constraints
 
 - Addd doctors kanban, grouped by speciality, added interns kanban
 
 - Added visit from patient card
 
 - Added visit from doctor kanban card
+
+- Check doctors visits on duplicates
+
+- Added analyses model and views
+
+- Added visits planner
 
 `16.0.1.0.1`
 ----------------

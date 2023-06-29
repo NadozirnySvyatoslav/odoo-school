@@ -47,3 +47,18 @@ class HRHospitalDoctor(models.Model):
                 'default_doctor_id': self.id,
             }
         }
+
+    def plan_visits(self):
+        view_id = self.env.ref('hr_hospital.doctor_visit_view_form').id
+        return {
+            'name': "Plan visits",
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'res_model': 'hr_hospital.doctor.visit',
+            'view_id': view_id,
+            'views': [(view_id, 'form')],
+            'target': 'new',
+            'context': {
+                'default_doctor_id': self.id,
+            }
+        }

@@ -115,7 +115,11 @@
                                             class="o_icon_button fa fa-plus m-1" type="object"
                                     />
                                 </div>
-
+                                <div style="margin: 1em">
+                                    <button name="plan_visits" string="Plan visits"
+                                            class="o_icon_button fa fa-plus m-1" type="object"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </t>

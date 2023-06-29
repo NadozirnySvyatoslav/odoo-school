@@ -17,8 +17,7 @@ class HRHospitalVisit(models.Model):
     patient_id = fields.Many2one(
         readonly=False,
         comodel_name='hr_hospital.patient',
-        # states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
-        required=True,
+        states={'draft': [('readonly', False)], 'done': [('readonly', True), ('required', True)]},
     )
     diagnose_id = fields.Many2one(
         readonly=True,
@@ -28,7 +27,7 @@ class HRHospitalVisit(models.Model):
     description = fields.Text("Notes")
     planned_date = fields.Datetime(
         readonly=False,
-        # states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
+        states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
         copy=False,
     )
     state = fields.Selection(
@@ -44,14 +43,20 @@ class HRHospitalVisit(models.Model):
         ],
     )
 
+    analyses_ids = fields.One2many(comodel_name="hr_hospital.analysis", inverse_name="visit_id")
+
+    def _check_date(self, rec_id, planned_date, doctor_id):
+        min_date = planned_date - timedelta(minutes=15)
+        max_date = planned_date + timedelta(minutes=15)
+        return self.env["hr_hospital.visit"].search(
+            ['&', '&', ('planned_date', '>', min_date,), ('planned_date', '<', max_date), ('id', '!=', rec_id),
+             ('doctor_id', '=', doctor_id)])
+
     @api.constrains("planned_date")
     def _constrains_planned_date(self):
         for record in self:
             """Check if planned date more than 15 minutes from existed record"""
-            min_date = record.planned_date - timedelta(minutes=15)
-            max_date = record.planned_date + timedelta(minutes=15)
-            records = self.env["hr_hospital.visit"].search(
-                ['&', '&', ('planned_date', '>', min_date,), ('planned_date', '<', max_date), ('id', '!=', record.id)])
+            records = self._check_date(record.id, record.planned_date, record.doctor_id.id)
             if records:
                 raise ValidationError(_("Date and time already taken"))
 
