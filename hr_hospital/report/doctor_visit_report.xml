@@ -3,7 +3,7 @@
     <record id="doctor_visit_report" model="ir.actions.report">
         <field name="name">Visit report</field>
         <field name="model">hr_hospital.visit</field>
-        <field name="report_type">qweb-pdf</field>
+        <field name="report_type">qweb-html</field>
         <field name="report_name">hr_hospital.visit_report</field>
         <field name="report_file">hr_hospital.visit_report</field>
         <field name="binding_model_id" ref="model_hr_hospital_visit"/>
@@ -12,6 +12,10 @@
     </record>
 
     <template id="hr_hospital.visit_report">
+        <xpath expr="." position="inside">
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext"
+                  rel="stylesheet"/>
+        </xpath>
         <t t-call="web.html_container">
             <center>
                 <h1>Doctor visits</h1>
