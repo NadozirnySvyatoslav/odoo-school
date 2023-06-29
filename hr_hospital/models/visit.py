@@ -11,7 +11,7 @@ class HRHospitalVisit(models.Model):
     doctor_id = fields.Many2one(
         readonly=False,
         comodel_name='hr_hospital.doctor',
-        # states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
+        states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
         required=True,
     )
     patient_id = fields.Many2one(

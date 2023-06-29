@@ -28,7 +28,7 @@ class HRHospitalPatient(models.Model):
     def update_history(self, doctor_id):
         self.ensure_one()
         data = {
-            "doctor_id": doctor_id,
+            "doctor_id": doctor_id.id,
             "patient_id": self.id,
             "date": datetime.now().isoformat(),
         }
@@ -44,3 +44,19 @@ class HRHospitalPatient(models.Model):
                     obj.update_history(vals.get("doctor_id"))
         res = super(HRHospitalPatient, self).write(vals)
         return res
+
+    def action_add_visit(self):
+        view_id = self.env.ref('hr_hospital.hospital_visit_action_view_form').id
+        return {
+            'name': "Add visit",
+            'type': 'ir.actions.act_window',
+            'view_mode': 'form',
+            'res_model': 'hr_hospital.visit',
+            'view_id': view_id,
+            'views': [(view_id, 'form')],
+            'target': 'new',
+            'context': {
+                'default_doctor_id': self.doctor_id.id,
+                'default_patient_id': self.id,
+            }
+        }

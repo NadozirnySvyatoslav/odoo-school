@@ -2,6 +2,16 @@
 
 Changelog
 =========
+`16.0.1.0.2`
+----------------
+
+- Fix types, added recordsets in write methods, added constraints
+
+- Addd doctors kanban, grouped by speciality, added interns kanban
+
+- Added visit from patient card
+
+- Added visit from doctor kanban card
 
 `16.0.1.0.1`
 ----------------

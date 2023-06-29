@@ -34,7 +34,6 @@
         </field>
     </record>
 
-
     <record model="ir.ui.view" id="hospital_diagnose_action_view_list">
         <field name="name">Diagnoses</field>
         <field name="model">hr_hospital.diagnose</field>
