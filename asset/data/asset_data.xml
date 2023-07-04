@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="wincor_nixdorf" model="res.partner">
+        <field name="name">Wincor Nixdorf</field>
+    </record>
+    <record id="procash_1500" model="asset.model">
+        <field name="name">ProCash 1500</field>
+        <field name="partner_id" ref="asset.wincor_nixdorf"/>
+    </record>
+        <record id="procash_2050" model="asset.model">
+        <field name="name">ProCash 2050</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="procash_2000" model="asset.model">
+        <field name="name">ProCash 2000</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="procash_3000" model="asset.model">
+        <field name="name">ProCash 3000</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="crs_3100" model="asset.model">
+        <field name="name">CRS 3100</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="procash_1500xe" model="asset.model">
+        <field name="name">ProCash 1500XE</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="procash_2050xe" model="asset.model">
+        <field name="name">ProCash 2050XE</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="procash_2000xe" model="asset.model">
+        <field name="name">ProCash 2000XE</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="procash_2150xe" model="asset.model">
+        <field name="name">ProCash 2150XE</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="procash_2100xe" model="asset.model">
+        <field name="name">ProCash 2100XE</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="crs_3100xe" model="asset.model">
+        <field name="name">CRS 3100XE</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="cineo_2550" model="asset.model">
+        <field name="name">CINEO 2550</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+    <record id="cineo_2100" model="asset.model">
+        <field name="name">CINEO 2100</field>
+        <field name="partner_id" ref="wincor_nixdorf"/>
+    </record>
+</odoo>

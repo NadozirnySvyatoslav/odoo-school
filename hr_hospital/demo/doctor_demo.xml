@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo noupdate="1">
+<odoo>
 
-    <record id="hr_hospital_doctor_0" model="hr_hospital.doctor">
+    <record id="doctor_0" model="hr_hospital.doctor">
         <field name="surname">Ткачук</field>
         <field name="first_name">Віктор</field>
         <field name="speciality">Лікар невролог</field>
@@ -10,7 +10,7 @@
         <field name="photo" file="hr_hospital/static/photos/tkachuk.png" type="base64"/>
     </record>
 
-    <record id="hr_hospital_doctor_1" model="hr_hospital.doctor">
+    <record id="doctor_1" model="hr_hospital.doctor">
         <field name="surname">Дейнека</field>
         <field name="first_name">Лариса</field>
         <field name="email">deineka.l@gmail.com</field>
@@ -19,7 +19,7 @@
         <field name="photo" file="hr_hospital/static/photos/deineka.jpg" type="base64"/>
     </record>
 
-    <record id="hr_hospital_doctor_2" model="hr_hospital.doctor">
+    <record id="doctor_2" model="hr_hospital.doctor">
         <field name="surname">Нагорна</field>
         <field name="first_name">Олександра</field>
         <field name="email">nahorna.o@gmail.com</field>
@@ -27,5 +27,86 @@
         <field name="speciality">Лікар хірург</field>
         <field name="photo" file="hr_hospital/static/photos/nahorna.jpg" type="base64"/>
     </record>
-
+    <record id="doctor_3" model="hr_hospital.doctor">
+        <field name="surname">Іванов</field>
+        <field name="first_name">Олександр</field>
+        <field name="email">ivanov.o@gmail.com</field>
+        <field name="sex">male</field>
+        <field name="speciality">Лікар педіатр</field>
+        <field name="photo" file="hr_hospital/static/photos/ivanov.png" type="base64"/>
+    </record>
+    <record id="doctor_4" model="hr_hospital.doctor">
+        <field name="surname">Петрова</field>
+        <field name="first_name">Марія</field>
+        <field name="email">petrova.m@gmail.com</field>
+        <field name="sex">female</field>
+        <field name="speciality">Лікар офтальмолог</field>
+        <field name="photo" file="hr_hospital/static/photos/petrova.png" type="base64"/>
+    </record>
+    <record id="doctor_5" model="hr_hospital.doctor">
+        <field name="surname">Сидоров</field>
+        <field name="first_name">Олег</field>
+        <field name="email">sidorov.o@gmail.com</field>
+        <field name="sex">male</field>
+        <field name="speciality">Лікар кардіолог</field>
+        <field name="photo" file="hr_hospital/static/photos/sidorov.png" type="base64"/>
+    </record>
+    <record id="doctor_6" model="hr_hospital.doctor">
+        <field name="surname">Коваленко</field>
+        <field name="first_name">Наталія</field>
+        <field name="email">kovalenko.n@gmail.com</field>
+        <field name="sex">female</field>
+        <field name="speciality">Лікар гінеколог</field>
+        <field name="photo" file="hr_hospital/static/photos/kovalenko.png" type="base64"/>
+    </record>
+    <record id="doctor_7" model="hr_hospital.doctor">
+        <field name="surname">Мельник</field>
+        <field name="first_name">Андрій</field>
+        <field name="email">melnik.a@gmail.com</field>
+        <field name="sex">male</field>
+        <field name="is_intern">True</field>
+        <field name="mentor_id" ref="hr_hospital.doctor_0"/>
+        <field name="speciality">Лікар невролог</field>
+        <field name="photo" file="hr_hospital/static/photos/melnik.png" type="base64"/>
+    </record>
+    <record id="doctor_8" model="hr_hospital.doctor">
+        <field name="surname">Василенко</field>
+        <field name="first_name">Оксана</field>
+        <field name="email">vasilenko.o@gmail.com</field>
+        <field name="sex">female</field>
+        <field name="speciality">Лікар ендокринолог</field>
+        <field name="photo" file="hr_hospital/static/photos/vasilenko.png" type="base64"/>
+    </record>
+    <record id="doctor_9" model="hr_hospital.doctor">
+        <field name="surname">Павлов</field>
+        <field name="first_name">Микола</field>
+        <field name="email">pavlov.m@gmail.com</field>
+        <field name="sex">male</field>
+        <field name="speciality">Лікар отоларинголог</field>
+        <field name="photo" file="hr_hospital/static/photos/pavlov.png" type="base64"/>
+    </record>
+    <record id="doctor_10" model="hr_hospital.doctor">
+        <field name="surname">Кравченко</field>
+        <field name="first_name">Олена</field>
+        <field name="email">kravchenko.o@gmail.com</field>
+        <field name="sex">female</field>
+        <field name="speciality">Лікар дерматолог</field>
+        <field name="photo" file="hr_hospital/static/photos/kravchenko.png" type="base64"/>
+    </record>
+    <record id="doctor_11" model="hr_hospital.doctor">
+        <field name="surname">Соколов</field>
+        <field name="first_name">Максим</field>
+        <field name="email">sokolov.m@gmail.com</field>
+        <field name="sex">male</field>
+        <field name="speciality">Лікар ортопед</field>
+        <field name="photo" file="hr_hospital/static/photos/sokolov.png" type="base64"/>
+    </record>
+    <record id="doctor_12" model="hr_hospital.doctor">
+        <field name="surname">Григорова</field>
+        <field name="first_name">Анастасія</field>
+        <field name="email">hryhorova.a@gmail.com</field>
+        <field name="sex">female</field>
+        <field name="speciality">Лікар психіатр</field>
+        <field name="photo" file="hr_hospital/static/photos/hryhorova.png" type="base64"/>
+    </record>
 </odoo>

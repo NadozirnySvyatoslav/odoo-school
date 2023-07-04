@@ -11,8 +11,7 @@ class HRHospitalVisit(models.Model):
     doctor_id = fields.Many2one(
         readonly=False,
         comodel_name='hr_hospital.doctor',
-        states={'draft': [('readonly', False)], 'done': [('readonly', True)]},
-        required=True,
+        states={'draft': [('readonly', False)], 'done': [('readonly', True), ('required', True)]},
     )
     patient_id = fields.Many2one(
         readonly=False,
@@ -88,8 +87,9 @@ class HRHospitalVisit(models.Model):
         return self.write({'state': 'wait'})
 
     def unlink(self):
-        if self.state in ('canceled', 'done') and self.diagnose_id:
-            raise UserError(_("Cannot delete closed record"))
+        for record in self:
+            if record.state in ('canceled', 'done') and record.diagnose_id:
+                raise UserError(_("Cannot delete closed record"))
         return super().unlink()
 
     def set_diagnose(self):

@@ -52,6 +52,18 @@
                                 </kanban>
                             </field>
                         </page>
+                        <page string="Patients">
+                            <field name="patient_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="sex"/>
+                                    <field name="birthday"/>
+                                    <field name="age"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                </tree>
+                            </field>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

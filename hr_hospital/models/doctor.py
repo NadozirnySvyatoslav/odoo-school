@@ -11,6 +11,7 @@ class HRHospitalDoctor(models.Model):
     is_intern = fields.Boolean()
     mentor_id = fields.Many2one(comodel_name='hr_hospital.doctor')
     intern_ids = fields.One2many(comodel_name='hr_hospital.doctor', inverse_name="mentor_id")
+    patient_ids = fields.One2many(comodel_name='hr_hospital.patient', inverse_name="doctor_id")
 
     @api.model
     def _check_is_intern(self, mentor_id):

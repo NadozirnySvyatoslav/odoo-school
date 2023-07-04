@@ -74,6 +74,7 @@
             <form string="visit">
                 <sheet>
                     <group>
+                        <field name="state" attrs="{'invisible':True}"/>
                         <field name="name"/>
                         <field name="patient_id"/>
                         <field name="doctor_id"/>
@@ -103,7 +104,7 @@
         <field name="name">visits</field>
         <field name="model">hr_hospital.visit</field>
         <field name="arch" type="xml">
-            <calendar string="Visits" date_start="planned_date" mode="month"
+            <calendar string="Visits" date_start="planned_date" mode="month" color="patient_id" quick_add="False"
                       form_view_id="%(hr_hospital.hospital_visit_calendar_view_form)d">
                 <field name="name"/>
                 <field name="patient_id"/>

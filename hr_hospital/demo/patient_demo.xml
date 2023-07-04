@@ -1,29 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<odoo  noupdate="1"> 
-          <record id="hr_hospital_patient_0" model="hr_hospital.patient">
-            <field name="surname">Марчук</field>
-            <field name="first_name">Зоя Степанівна</field>
-            <field name="birthday">1963-02-18</field>
-            <field name="sex">female</field>
-            <field name="description"></field>
-            <field name="photo" file="hr_hospital/static/photos/marchuk.jpg" type="base64" />
-          </record>
+<odoo>
+    <record id="hr_hospital_patient_0" model="hr_hospital.patient">
+        <field name="surname">Марчук</field>
+        <field name="first_name">Зоя Степанівна</field>
+        <field name="birthday">1963-02-18</field>
+        <field name="sex">female</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_0"/>
+        <field name="description"></field>
+        <field name="photo" file="hr_hospital/static/photos/marchuk.jpg" type="base64"/>
+    </record>
 
-          <record id="hr_hospital_patient_1" model="hr_hospital.patient">
-            <field name="surname">Степанюк</field>
-            <field name="first_name">Іван Васильович</field>
-            <field name="birthday">1958-07-28</field>
-            <field name="sex">male</field>
-            <field name="description"></field>
-            <field name="photo" file="hr_hospital/static/photos/stepanuk.jpg" type="base64" />
-          </record>
+    <record id="hr_hospital_patient_1" model="hr_hospital.patient">
+        <field name="surname">Степанюк</field>
+        <field name="first_name">Іван Васильович</field>
+        <field name="birthday">1958-07-28</field>
+        <field name="sex">male</field>
+        <field name="description"></field>
+        <field name="doctor_id" ref="hr_hospital.doctor_0"/>
+        <field name="photo" file="hr_hospital/static/photos/stepanuk.jpg" type="base64"/>
+    </record>
 
-          <record id="hr_hospital_patient_2" model="hr_hospital.patient">
-            <field name="surname">Кузьмук</field>
-            <field name="first_name">Олег Ігорович</field>
-            <field name="birthday">1976-01-14</field>
-            <field name="sex">male</field>
-            <field name="description"></field>
-            <field name="photo" file="hr_hospital/static/photos/kuzmuk.jpg" type="base64" />
-          </record>
+    <record id="hr_hospital_patient_2" model="hr_hospital.patient">
+        <field name="surname">Кузьмук</field>
+        <field name="first_name">Олег Ігорович</field>
+        <field name="birthday">1976-01-14</field>
+        <field name="sex">male</field>
+        <field name="description"></field>
+        <field name="doctor_id" ref="hr_hospital.doctor_0"/>
+        <field name="photo" file="hr_hospital/static/photos/kuzmuk.jpg" type="base64"/>
+    </record>
+    <record id="hr_hospital_patient_3" model="hr_hospital.patient">
+        <field name="surname">Петренко</field>
+        <field name="first_name">Іван Володимирович</field>
+        <field name="birthday">1978-07-22</field>
+        <field name="sex">male</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_1"/>
+        <field name="description">Пацієнт Петренко Іван Володимирович народився 22 липня 1978 року. Чоловік, стать -
+            чоловіча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_4" model="hr_hospital.patient">
+        <field name="surname">Ковальчук</field>
+        <field name="first_name">Олена Василівна</field>
+        <field name="birthday">1990-05-10</field>
+        <field name="sex">female</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_2"/>
+        <field name="description">Пацієнтка Ковальчук Олена Василівна народилася 10 травня 1990 року. Жінка, стать -
+            жіноча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_5" model="hr_hospital.patient">
+        <field name="surname">Сидоренко</field>
+        <field name="first_name">Микола Олексійович</field>
+        <field name="birthday">1985-12-05</field>
+        <field name="sex">male</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_1"/>
+        <field name="description">Пацієнт Сидоренко Микола Олексійович народився 5 грудня 1985 року. Чоловік, стать -
+            чоловіча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_6" model="hr_hospital.patient">
+        <field name="surname">Литвиненко</field>
+        <field name="first_name">Анна Миколаївна</field>
+        <field name="birthday">1972-09-09</field>
+        <field name="sex">female</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_3"/>
+        <field name="description">Пацієнтка Литвиненко Анна Миколаївна народилася 9 вересня 1972 року. Жінка, стать -
+            жіноча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_7" model="hr_hospital.patient">
+        <field name="surname">Шевченко</field>
+        <field name="first_name">Олександр Іванович</field>
+        <field name="birthday">1980-03-30</field>
+        <field name="sex">male</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_3"/>
+        <field name="description">Пацієнт Шевченко Олександр Іванович народився 30 березня 1980 року. Чоловік, стать -
+            чоловіча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_8" model="hr_hospital.patient">
+        <field name="surname">Ковальова</field>
+        <field name="first_name">Ірина Василівна</field>
+        <field name="birthday">1995-11-12</field>
+        <field name="sex">female</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_2"/>
+        <field name="description">Пацієнтка Ковальова Ірина Василівна народилася 12 листопада 1995 року. Жінка, стать -
+            жіноча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_9" model="hr_hospital.patient">
+        <field name="surname">Кравчук</field>
+        <field name="first_name">Максим Сергійович</field>
+        <field name="birthday">1988-06-28</field>
+        <field name="sex">male</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_4"/>
+        <field name="description">Пацієнт Кравчук Максим Сергійович народився 28 червня 1988 року. Чоловік, стать -
+            чоловіча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_10" model="hr_hospital.patient">
+        <field name="surname">Григоренко</field>
+        <field name="first_name">Марія Володимирівна</field>
+        <field name="birthday">1983-04-14</field>
+        <field name="sex">female</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_2"/>
+        <field name="description">Пацієнтка Григоренко Марія Володимирівна народилася 14 квітня 1983 року. Жінка, стать
+            - жіноча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
+    <record id="hr_hospital_patient_11" model="hr_hospital.patient">
+        <field name="surname">Бондаренко</field>
+        <field name="first_name">Сергій Олександрович</field>
+        <field name="birthday">1975-12-01</field>
+        <field name="sex">male</field>
+        <field name="doctor_id" ref="hr_hospital.doctor_0"/>
+        <field name="description">Пацієнт Бондаренко Сергій Олександрович народився 1 грудня 1975 року. Чоловік, стать -
+            чоловіча. Зараз відсутня додаткова інформація щодо пацієнта.
+        </field>
+    </record>
 </odoo>

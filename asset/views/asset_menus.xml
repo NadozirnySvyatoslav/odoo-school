@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem name="Assets" id="assets_menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Assets" id="assets_assets_menu" parent="assets_menu_root"/>
+    <!-- actions -->
+    <menuitem name="Assets" id="assets_assets" parent="assets_assets_menu"
+              action="asset_asset_action"/>
+    <menuitem name="Models" id="assets_models" parent="assets_assets_menu"
+              action="asset_model_action"/>
+</odoo>
