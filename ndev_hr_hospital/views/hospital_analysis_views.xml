@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_analysis_value_action_view_form" model="ir.ui.view">
+        <field name="name">hr_hospital.analysis.form</field>
+        <field name="model">hr_hospital.analysis.value</field>
+        <field name="arch" type="xml">
+            <form string="analysis">
+                <sheet>
+                    <group>
+                        <field name="analysis_id" invisible="1"/>
+                        <field name="name"/>
+                        <field name="value"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_analysis_value_action">
+        <field name="name">Analyses</field>
+        <field name="res_model">hr_hospital.analysis.value</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <record id="hospital_analysis_action_view_form" model="ir.ui.view">
+        <field name="name">hr_hospital.analysis.form</field>
+        <field name="model">hr_hospital.analysis</field>
+        <field name="arch" type="xml">
+            <form string="analysis">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="visit_id" invisible="1"/>
+                            <field name="name"/>
+                            <field name="doctor_id"/>
+                            <field name="patient_id"/>
+                            <field name="date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Values">
+                            <field name="value_ids">
+                                <tree editable="top">
+                                    <field name="name"/>
+                                    <field name="value"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_analysis_action_view_list">
+        <field name="name">Analyses</field>
+        <field name="model">hr_hospital.analysis</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="doctor_id" context="{'default_doctor_id':doctor_id}"/>
+                <field name="patient_id" context="{'default_patient_id':patient_id}"/>
+                <field name="date" context="{'default_date':date}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_analysis_action">
+        <field name="name">Analyses</field>
+        <field name="res_model">hr_hospital.analysis</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

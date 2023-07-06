@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_disease_action_view_form" model="ir.ui.view">
+        <field name="name">hr_hospital.disease.form</field>
+        <field name="model">hr_hospital.disease</field>
+        <field name="arch" type="xml">
+            <form string="Disease">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                        </group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_disease_action_view_list">
+        <field name="name">Diseases</field>
+        <field name="model">hr_hospital.disease</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_disease_filter">
+        <field name="name">Diseases</field>
+        <field name="model">hr_hospital.disease</field>
+        <field name="arch" type="xml">
+            <search string="Categories">
+                <filter name="groupby_name" string="Parent" context="{'group_by':'parent_id'}"/>
+                <field name="parent_id" groupby="patient_id"/>
+                <searchpanel view_types="list">
+                    <field name="parent_id" groupby="parent_id" hierarchize="1" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_disease_action">
+        <field name="name">Diseases</field>
+        <field name="res_model">hr_hospital.disease</field>
+        <field name="search_view_id" ref="view_disease_filter"/>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
