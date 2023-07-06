@@ -45,3 +45,7 @@ Authors
 Contributors
 ------------
 Svyatoslav Nadozirny
+
+Further information
+===================
+HTML Description: `<static/description/index.html>`__
