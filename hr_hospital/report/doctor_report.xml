@@ -13,10 +13,6 @@
 
 
     <template id="hr_hospital.doctor_report2">
-        <xpath expr="." position="inside">
-            <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext"
-                  rel="stylesheet"/>
-        </xpath>
         <t t-foreach="docs" t-as="object">
             <div t-call="web.html_container">
                 <t t-call="web.external_layout">

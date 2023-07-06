@@ -12,6 +12,7 @@
     'maintainer': 'NDev',
     'depends': ['portal', 'mail'],
     'data': [
+        'security/hospital_security.xml',
         'security/ir.model.access.csv',
         'views/hospital_doctor_views.xml',
         'views/hospital_patient_views.xml',
@@ -28,6 +29,7 @@
         'wizard/doctor_visit_views.xml',
         'report/doctor_visit_report.xml',
         'report/doctor_report.xml',
+
     ],
     'demo': [
         'demo/doctor_demo.xml',
