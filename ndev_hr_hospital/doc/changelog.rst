@@ -2,6 +2,22 @@
 
 Changelog
 =========
+`16.0.1.0.4`
+----------------
+
+- Add tests
+
+- Added docs
+
+- Added uk_UA translate
+
+`16.0.1.0.3`
+----------------
+
+- Add report for doctors
+
+- Added report for visits
+
 `16.0.1.0.2`
 ----------------
 

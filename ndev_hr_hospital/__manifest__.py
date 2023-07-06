@@ -1,6 +1,6 @@
 {
     'name': "HR Hospital",
-    'version': '16.0.1.0.0',
+    'version': '16.0.1.0.4',
     'category': 'Human Resources/Employees',
 
     'summary': """
