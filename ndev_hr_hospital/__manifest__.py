@@ -35,7 +35,7 @@
         'demo/doctor_demo.xml',
         'demo/patient_demo.xml',
     ],
-
+    'images': ['static/description/banner.jpg'],
     'application': True,
     'installable': True,
     'auto_install': True,
