@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="doctor_report" model="ir.actions.report">
+        <field name="name">Doctor's report</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">hr_hospital.doctor_report2</field>
+        <field name="report_file">hr_hospital.doctor_report2</field>
+        <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
+        <field name="binding_view_types">form</field>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <template id="hr_hospital.doctor_report2">
+        <t t-foreach="docs" t-as="object">
+            <div t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>
+                            <span style="float:right">
+                                <t t-esc="object.speciality"/>
+                            </span>
+                            Report:
+                            <t t-out="object.name"/>
+                            <div style="clear: both;"></div>
+                        </h1>
+                        <div>
+                            <div>
+                                <img t-att-src="'/web/image?model=hr_hospital.doctor&amp;id=%d&amp;field=photo' % (object.id)"
+                                     style="float: right"/>
+                                <div>
+                                    <label>Name:</label>
+                                    <t t-esc="object.name"/>
+                                </div>
+                                <div>
+                                    <label>Sex:</label>
+                                    <t t-esc="object.sex"/>
+                                </div>
+                                <div>
+                                    <label>Email:</label>
+                                    <t t-esc="object.email"/>
+                                </div>
+                                <div>
+                                    <label>Phone:</label>
+                                    <t t-esc="object.phone"/>
+                                </div>
+
+                                <div style="clear: both;"></div>
+                            </div>
+                            <h2>Patients</h2>
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Patient</th>
+                                        <th>Sex</th>
+                                        <th>BirthDate</th>
+                                        <th>Age</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="object.patient_ids" t-as="o">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="o.name"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="o.sex"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="o.birthday"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="o.age"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                            <p>Date created:
+                                <t t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/>
+                            </p>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

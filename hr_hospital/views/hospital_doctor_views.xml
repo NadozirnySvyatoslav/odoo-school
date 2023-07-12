@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hospital_doctor_action_view_form" model="ir.ui.view">
+        <field name="name">hr_hospital.doctor.form</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form string="Doctor">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="surname"/>
+                            <field name="first_name"/>
+                            <field name="sex"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="speciality"/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id"/>
+                        </group>
+                        <group>
+                            <field name="photo" widget="image"/>
+                        </group>
+                        <field name="description"/>
+                    </group>
+                    <notebook>
+                        <page string="Interns">
+                            <field name="intern_ids">
+                                <kanban class="o_kanban_mobile" default_group_by="speciality">
+                                    <field name="id"/>
+                                    <field name="photo"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click">
+                                                <div class="o_kanban_image">
+                                                    <img t-att-src="kanban_image('hr_hospital.doctor', 'photo', record.id.raw_value)"
+                                                         alt="Doc"/>
+                                                </div>
+                                                <div class="oe_kanban_details">
+                                                    <div>
+                                                        <field name="name"/>
+                                                    </div>
+                                                    <div>
+                                                        <field name="speciality"/>
+                                                    </div>
+                                                    <div>
+                                                        <field name="email"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                        <page string="Patients">
+                            <field name="patient_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="sex"/>
+                                    <field name="birthday"/>
+                                    <field name="age"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_doctor_filter">
+        <field name="name">Doctors</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search string="Speciality">
+                <field name="speciality"/>
+                <searchpanel view_types="tree">
+                    <field name="speciality" enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_doctor_action_view_list">
+        <field name="name">Doctors</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="speciality"/>
+                <field name="email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_doctor_action_view_kanban">
+        <field name="name">Doctors</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" default_group_by="speciality">
+                <field name="id"/>
+                <field name="photo"/>
+                <field name="is_intern"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('hr_hospital.doctor', 'photo', record.id.raw_value)"
+                                     alt="Doc"/>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <div>
+                                    <field name="name"/>
+                                </div>
+                                <div>
+                                    <field name="speciality"/>
+                                </div>
+                                <div>
+                                    <field name="email"/>
+                                </div>
+                                <div attrs="{'invisible': [('is_intern', '!=', True)]}" class="bg-warning">
+                                    <span>Is intern</span>
+                                </div>
+                                <div style="margin: 1em">
+                                    <button name="action_add_visit" string="Add visit"
+                                            class="o_icon_button fa fa-plus m-1" type="object"
+                                    />
+                                </div>
+                                <div style="margin: 1em">
+                                    <button name="plan_visits" string="Plan visits"
+                                            class="o_icon_button fa fa-plus m-1" type="object"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+
+            </kanban>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_doctor_action">
+        <field name="name">Doctors</field>
+        <field name="res_model">hr_hospital.doctor</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="search_view_id" ref="view_doctor_filter"/>
+    </record>
+
+</odoo>
